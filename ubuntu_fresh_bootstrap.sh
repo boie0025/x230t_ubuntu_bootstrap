@@ -40,6 +40,8 @@ sudo tar -xf magick-rotation-1.6.2.tar
 
 sudo rm magick-rotation-1.6.2.tar
 
+cd magick-rotation-1.6.2
+
 sudo ./MAGICK-INSTALL
 
 cd
