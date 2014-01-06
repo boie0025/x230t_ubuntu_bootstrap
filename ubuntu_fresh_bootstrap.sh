@@ -40,7 +40,7 @@ cd
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-for PACKAGE in shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
+for PACKAGE in testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
     sudo apt-get -y install $PACKAGE
 done
 
