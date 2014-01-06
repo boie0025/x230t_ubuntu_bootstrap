@@ -132,6 +132,24 @@ Categories=Development;IDE;Java;' > STS.desktop
 
 cd
 
+# Get grails running
+
+sudo add-apt-repository ppa:groovy-dev/grails
+
+sudo apt-get update
+
+sudo apt-get install grails-ppa
+
+sudo apt-get install grails 2.3.4
+
+# Get groovy running
+
+sudo apt-add-repository ppa:groovy-dev/groovy
+
+sudo apt-get update
+
+sudo apt-get install groovy
+
 # Setup Configurations
 
 # Get Wireshark Running properly
