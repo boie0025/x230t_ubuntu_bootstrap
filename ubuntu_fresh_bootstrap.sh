@@ -40,7 +40,7 @@ cd
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-for PACKAGE in testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
+for PACKAGE in mplayer xinetd ctags testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
     sudo apt-get -y install $PACKAGE
 done
 
@@ -260,7 +260,13 @@ set-option -g display-panes-colour colour166 #orange
 
 # clock
 
-set-window-option -g clock-mode-colour colour64 #green' > .tmux.conf
+set-window-option -g clock-mode-colour colour64 #green
+
+# mouse selects window pane
+# new horizontal pane ctrl-a "
+# new vertical pane ctrl-a %
+
+set -g mouse-select-pane on' > .tmux.conf
 
 # Install some scripts
 
