@@ -40,11 +40,28 @@ cd
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-for PACKAGE in mplayer xinetd ctags testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
+for PACKAGE in gns3 mutt pdftk ufsutils sng mtr unrar fetchmail sdcv mplayer xinetd ctags testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
     sudo apt-get -y install $PACKAGE
 done
 
 sudo apt-get -y install build-essential make libglib2.0-dev
+
+# setup dictionary
+# dictionaries pulled from: http://abloz.com/huzheng/stardict-dic/dict.org/
+# more information on dictionaries at: http://askubuntu.com/questions/191125/is-there-an-offline-command-line-dictionary
+
+sudo mkdir -p /usr/share/stardict/dic/
+cd /usr/share/stardict/dic
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 # dictionary
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd-moby-thesaurus-2.4.2.tar.bz2 # thesaurus
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd-jargon-2.4.2.tar.bz2 # jargon file
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd_www.dict.org_elements-2.4.2.tar.bz2 # elements
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd-easton-2.4.2.tar.bz2 # Easton's 1897 bible dictionary
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd_www.dict.org_hitchcock-2.4.2.tar.bz2 # Hitchcock's bible names dictionary
+sudo wget http://abloz.com/huzheng/stardict-dic/dict.org/stardict-dictd_www.dict.org_devils-2.4.2.tar.bz2 # The Devil's Dictionary
+for dictionary in `ls |grep .*bz2`; do sudo tar -xvjf $dictionary; done
+sudo rm *.bz2
+cd
 
 # Get pulseaudio equalizer running
 
