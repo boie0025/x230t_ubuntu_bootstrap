@@ -1,8 +1,4 @@
-libglib2.0-dev
-libapparmor1
-libjpeg62
 build-essential
-apache2
 arduino
 ascii
 audacity
