@@ -1,5 +1,6 @@
 build-essential
 tzdata
+ascii
 arduino
 audacity
 blender

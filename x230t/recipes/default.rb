@@ -18,16 +18,6 @@ bash "disable_the_guest_account" do
   echo 'allow-guest=false' >> /etc/lightdm/lightdm.conf
 end
 
-bash "update_the_system" do
-  user "root"
-  code <<-EOH
-  apt-get update
-  apt-get upgrade -y
-  apt-get autoclean -y
-  apt-get autoremove -y
-  EOH
-end
-
 bash "install_base_libraries" do
   user "root"
   code <<-EOH
