@@ -40,7 +40,7 @@ cd
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-for PACKAGE in gns3 mutt pdftk ufsutils sng mtr unrar fetchmail sdcv mplayer xinetd ctags testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
+for PACKAGE in node libjpeg62 libapparmor1 'r-base' compizconfig-settings-manager ascii gns3 mutt pdftk ufsutils sng mtr unrar fetchmail sdcv mplayer xinetd ctags testdisk shred scrub wireshark keepassx virtualbox arduino fceu blender inkscape gimp scribus ufraw dropbox mysql-workbench qtcreator smartgit audacity clementine vim gnucash git nmap gnome-session-fallback mysql-server tomcat7 apache2 xournal curl imagemagick tmux dkms python2.7 cellwriter  indicator-multiload; do
     sudo apt-get -y install $PACKAGE
 done
 
@@ -174,6 +174,10 @@ sudo apt-get install groovy
 sudo dpkg-reconfigure wireshark-common
 
 sudo usermod -a -G wireshark $USER
+
+# Disable auto-opening nautilus window after auto-mount
+
+sudo gsettings set org.gnome.desktop.media-handling automount-open false
 
 # Vim configuration
 
@@ -369,7 +373,7 @@ cd
 
 # Config bash
 
-echo 'alias ls="ls --color"
+# echo 'alias ls="ls --color" 
 alias vi="vim"' >> .bashrc
 
 # Make sure we grabbed everything
