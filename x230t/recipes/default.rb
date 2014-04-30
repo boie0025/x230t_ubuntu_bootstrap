@@ -7,28 +7,55 @@
 # All rights reserved - Do Not Redistribute
 #
 
+audio = %w{audacity clementine}
+databases = %w{mysql-workbench}
+entertainment = %w{fceu mplayer}
+graphics = %w{blender gimp imagemagick inkscape pdftk scribus sng ufraw}
+libraries = %w{libglib2.0-dev libapparmor libjpeg62}
+mail = %w{fetchmail mutt}
+networking = %w{gns3 mtr nmap wireshark}
+office = %w{dropbox gnucash keepassx sdcv xournal}
+programming = %w{arduino git python2 qtcreator r-base smartgit tmux vim virtualbox}
+security = %w{scrub shred}
+system = %w{build-essential ctags curl dkms cellwriter compizconfig-settings-manager indicator-multiload testdisk ufsutils xinetd}
+web = %w{node}
+
+packages = [ audio, databases, entertainment, graphics, mail, networking, office, programming, security, system, web ]
+
+
 bash "configure_firewall" do
   user "root"
+  code <<-EOH
   ufw default deny
   ufw enable
+  EOH
 end
 
 bash "disable_the_guest_account" do
   user "root"
-  echo 'allow-guest=false' >> /etc/lightdm/lightdm.conf
-end
-
-bash "install_base_libraries" do
-  user "root"
   code <<-EOH
-  apt-get install libglib2.0-dev -y
-  apt-get install libapparmor -y
-  apt-get install libjpeg62 -y
+  echo 'allow-guest=false' >> /etc/lightdm/lightdm.conf
   EOH
 end
 
-File.open("/var/chef/cookbooks/x230t/files/default/programs").each do |pkg|
-  package "#{pkg}" do
+bash "update_the_system" do
+  user "root"
+  code <<-EOH
+  apt-get update
+  apt-get-upgrade
+  apt-get autoclean
+  apt-get autoremove
+  EOH
+end
+
+libraries.each do |library|
+  package "library" do
+    action :install
+  end
+end
+
+packages.flatten.each do |pkg|
+  package "pkg" do
     action :install
   end
 end
