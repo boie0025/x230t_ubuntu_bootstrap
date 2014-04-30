@@ -16,7 +16,7 @@ mail = %w{fetchmail mutt}
 networking = %w{gns3 mtr nmap wireshark}
 office = %w{gnucash keepassx sdcv xournal}
 programming = %w{arduino git qt5-default qttools5-dev-tools r-base tmux vim virtualbox}
-security = %w{scrub shred}
+security = %w{scrub secure-delete}
 system = %w{build-essential ctags curl dkms cellwriter compizconfig-settings-manager indicator-multiload testdisk ufsutils xinetd}
 web = %w{lynx node}
 
