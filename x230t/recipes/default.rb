@@ -49,13 +49,13 @@ bash "update_the_system" do
 end
 
 libraries.each do |lib|
-  package "lib" do
+  package "#{lib}" do
     action :install
   end
 end
 
 packages.flatten.each do |pkg|
-  package "pkg" do
+  package "#{pkg}" do
     action :install
   end
 end
