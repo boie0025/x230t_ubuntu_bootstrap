@@ -42,9 +42,9 @@ bash "update_the_system" do
   user "root"
   code <<-EOH
   apt-get update
-  apt-get-upgrade
-  apt-get autoclean
-  apt-get autoremove
+  apt-get-upgrade -y
+  apt-get autoclean -y
+  apt-get autoremove -y
   EOH
 end
 
