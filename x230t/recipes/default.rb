@@ -48,8 +48,8 @@ bash "update_the_system" do
   EOH
 end
 
-libraries.each do |library|
-  package "library" do
+libraries.each do |lib|
+  package "lib" do
     action :install
   end
 end
