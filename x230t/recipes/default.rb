@@ -18,7 +18,7 @@ office = %w{dropbox gnucash keepassx sdcv xournal}
 programming = %w{arduino git python2 qtcreator r-base smartgit tmux vim virtualbox}
 security = %w{scrub shred}
 system = %w{build-essential ctags curl dkms cellwriter compizconfig-settings-manager indicator-multiload testdisk ufsutils xinetd}
-web = %w{node}
+web = %w{lynx node}
 
 packages = [ audio, databases, entertainment, graphics, mail, networking, office, programming, security, system, web ]
 
