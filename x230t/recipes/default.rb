@@ -66,7 +66,7 @@ end
 bash "lowercase_all_home_directories" do
   cwd "/home/#{node['current_user']}"
   code <<-EOH
-  rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
+  rename 'y/A-Z/a-z/' *
   EOH
 end
 
