@@ -81,5 +81,13 @@ end
 cookbook_file "env.sh" do
   path "/home/#{node['current_user']}/bin/env.sh"
   owner "#{node['current_user']}"
+  mode "0700"
+  action :create
+end
+
+cookbook_file "template.pl" do
+  path "/home/#{node['current_user']}/bin/template.pl"
+  owner "#{node['current_user']}"
+  mode "0700"
   action :create
 end
