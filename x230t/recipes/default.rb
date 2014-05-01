@@ -61,11 +61,11 @@ packages.flatten.each do |pkg|
   end
 end
 
-directory "/home/#{user}/.irssi" do
+directory "/home/#{username}/.irssi" do
   action :create
 end
 
 cookbook_file "irssi.config" do
-  path "/home/#{user}/.irssi/config"
+  path "/home/#{username}/.irssi/config"
   action :create
 end
