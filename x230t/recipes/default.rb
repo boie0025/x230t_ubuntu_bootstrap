@@ -23,6 +23,8 @@ web = %w{lynx node}
 
 packages = [ audio, communication, databases, entertainment, graphics, mail, networking, office, programming, security, system, web ]
 
+bin_files = %w{env.sh template.pl}
+home_directory_files = %w{.tmux.conf .vimrc}
 
 bash "configure_firewall" do
   user "root"
@@ -78,18 +80,21 @@ directory "/home/#{node['current_user']}/bin" do
   action :create
 end
 
-cookbook_file "env.sh" do
-  path "/home/#{node['current_user']}/bin/env.sh"
-  owner "#{node['current_user']}"
-  mode "0700"
-  action :create
+bin_files.each do |file|
+  cookbook_file "#{file}" do
+    path "/home/#{node['current_user']}/bin/#{file}"
+    owner "#{node['current_user']}"
+    mode "0700"
+    action :create
+  end
 end
 
-cookbook_file "template.pl" do
-  path "/home/#{node['current_user']}/bin/template.pl"
-  owner "#{node['current_user']}"
-  mode "0700"
-  action :create
+home_directory_files.each do |file|
+  cookbook_file "#{file}" do
+    path "/home/#{node['current_user']}/#{file}"
+    owner "#{node['current_user']}"
+    action :create
+  end 
 end
 
 cookbook_file "STS.desktop" do
