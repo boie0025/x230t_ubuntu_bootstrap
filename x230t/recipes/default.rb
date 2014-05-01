@@ -62,20 +62,24 @@ packages.flatten.each do |pkg|
 end
 
 directory "/home/#{node['current_user']}/.irssi" do
+  owner "#{node['current_user']}"
   action :create
 end
 
 cookbook_file "irssi.config" do
   path "/home/#{node['current_user']}/.irssi/config"
+  owner "#{node['current_user']}"
   action :create
 end
 
 directory "/home/#{node['current_user']}/bin" do
+  owner "#{node['current_user']}"
   mode "0700"
   action :create
 end
 
 cookbook_file "env.sh" do
   path "/home/#{node['current_user']}/bin/env.sh"
+  owner "#{node['current_user']}"
   action :create
 end
