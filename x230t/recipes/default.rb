@@ -66,7 +66,7 @@ directory "/home/#{node['current_user']}/.irssi" do
 end
 
 cookbook_file "irssi.config" do
-  path "/home/#{node['current_user']}/.irssi"
+  path "/home/#{node['current_user']}/.irssi/config"
   action :create
 end
 
@@ -76,6 +76,6 @@ directory "/home/#{node['current_user']}/bin" do
 end
 
 cookbook_file "env.sh" do
-  path "/home/#{node['current_user']}/bin"
+  path "/home/#{node['current_user']}/bin/env.sh"
   action :create
 end
