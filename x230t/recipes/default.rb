@@ -91,3 +91,8 @@ cookbook_file "template.pl" do
   mode "0700"
   action :create
 end
+
+cookbook_file "STS.desktop" do
+  path "/usr/share/applications/STS.desktop"
+  action :create
+end
