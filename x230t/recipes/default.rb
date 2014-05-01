@@ -16,12 +16,12 @@ libraries = %w{libglib2.0-dev libapparmor1 libjpeg62}
 mail = %w{fetchmail mutt}
 networking = %w{gns3 mtr nmap wireshark}
 office = %w{keepassx sdcv xournal}
-programming = %w{arduino git qt5-default qttools5-dev-tools r-base tmux vim virtualbox}
+programming = %w{git qt5-default qttools5-dev-tools r-base tmux vim virtualbox}
 security = %w{scrub secure-delete}
 system = %w{build-essential curl dkms cellwriter compizconfig-settings-manager indicator-multiload testdisk xinetd}
 web = %w{lynx node}
 
-packages = [ audio, databases, entertainment, graphics, mail, networking, office, programming, security, system, web ]
+packages = [ audio, communication, databases, entertainment, graphics, mail, networking, office, programming, security, system, web ]
 
 
 bash "configure_firewall" do
@@ -59,4 +59,13 @@ packages.flatten.each do |pkg|
   package "#{pkg}" do
     action :install
   end
+end
+
+directory "/home/#{current_user}/.irssi" do
+  action :create
+end
+
+cookbook_file "irssi.config" do
+  path "/home/#{current_user}/.irssi/config"
+  action :create
 end
