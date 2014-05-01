@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SpringSource Tool Suite
+Comment=SpringSource Tool Suite
+Exec=/opt/springsource/sts-3.4.0.RELEASE/STS
+Icon=/opt/springsource/sts-3.4.0.RELEASE/icon.xpm
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Development;IDE;Java;
