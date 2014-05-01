@@ -8,13 +8,14 @@
 #
 
 audio = %w{audacity clementine}
+communication = %w{irssi}
 databases = %w{mysql-workbench}
 entertainment = %w{fceu mplayer}
 graphics = %w{blender gimp imagemagick inkscape pdftk scribus sng ufraw}
 libraries = %w{libglib2.0-dev libapparmor1 libjpeg62}
 mail = %w{fetchmail mutt}
 networking = %w{gns3 mtr nmap wireshark}
-office = %w{gnucash keepassx sdcv xournal}
+office = %w{keepassx sdcv xournal}
 programming = %w{arduino git qt5-default qttools5-dev-tools r-base tmux vim virtualbox}
 security = %w{scrub secure-delete}
 system = %w{build-essential curl dkms cellwriter compizconfig-settings-manager indicator-multiload testdisk xinetd}
