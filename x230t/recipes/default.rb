@@ -66,10 +66,16 @@ directory "/home/#{node['current_user']}/.irssi" do
 end
 
 cookbook_file "irssi.config" do
-  owner = "${node['current_user']"
+  path "/home/#{node['current_user']}/.irssi"
   action :create
 end
 
 directory "/home/#{node['current_user']}/bin" do
+  mode "0700"
+  action :create
+end
+
+cookbook_file "env.sh" do
+  path "/home/#{node['current_user']}/bin"
   action :create
 end
