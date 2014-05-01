@@ -62,12 +62,14 @@ packages.flatten.each do |pkg|
 end
 
 directory "/home/#{node['current_user']}/.irssi" do
-  owner = "${node['current_user']}"
   action :create
 end
 
 cookbook_file "irssi.config" do
   owner = "${node['current_user']"
-  path "/home/#{node['current_user']}/.irssi/config"
+  action :create
+end
+
+directory "/home/#{node['current_user']}/bin" do
   action :create
 end
