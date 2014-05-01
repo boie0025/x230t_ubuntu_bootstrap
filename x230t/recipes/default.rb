@@ -36,9 +36,7 @@ end
 
 bash "disable_the_guest_account" do
   user "root"
-  code <<-EOH
-  echo 'allow-guest=false' >> /etc/lightdm/lightdm.conf
-  EOH
+  code "echo 'allow-guest=false' >> /etc/lightdm/lightdm.conf"
 end
 
 bash "update_the_system" do
@@ -65,9 +63,7 @@ end
 
 bash "lowercase_all_home_directories" do
   cwd "/home/#{node['current_user']}"
-  code <<-EOH
-  rename 'y/A-Z/a-z/' *
-  EOH
+  code "rename 'y/A-Z/a-z/' *"
 end
 
 directory "/home/#{node['current_user']}/.irssi" do
